@@ -17,7 +17,7 @@
         android:paddingTop="20dp"
          />
     <TextView
-        android:id="@+id/tvBoardlist"
+        android:id="@+id/tvBoardList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="this will be a list of the board setup for now."
@@ -31,10 +31,12 @@
         android:id="@+id/btnGenerateBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Generate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvBoardlist"
-        android:paddingTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvBoardList"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         />
 
 

@@ -2,11 +2,20 @@ package com.example.catanrandomizer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val boardTextView = findViewById<TextView>(R.id.tvBoardList)
+        val btn = findViewById<Button>(R.id.btnGenerateBoard)
+        btn.setOnClickListener {
+            getBoard()
+        }
     }
 
     private fun getBoard() : String {
@@ -22,8 +31,20 @@ class MainActivity : AppCompatActivity() {
 
         var values = arrayOf(2,3,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12)
 
-        println("Board: $rows")
+        Toast.makeText(this, "Board posted in println", Toast.LENGTH_LONG).show()
+        printBoard(rows)
 
         return board
+    }
+
+    private fun printBoard(boards: Array<Array<Int>>) {
+        var boardCount = 0
+        for (board in boards) {
+            print("board: ${boardCount.toString()}")
+            boardCount++
+            for (shape in board) {
+                print(shape.toString())
+            }
+        }
     }
 }
